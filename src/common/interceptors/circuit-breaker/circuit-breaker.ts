@@ -25,6 +25,7 @@ export class CircuitBreaker {
             }
             this.state = CIRCUIT_BREAKER_STATE.HalfOpen;
         }
+        
         return next.handle().pipe(
             tap({
                 next: () => this.handleSuccess(),
