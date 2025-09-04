@@ -9,6 +9,13 @@ import { HttpClientModule } from './http-client/http-client.module';
 import { TagsModule } from './tags/tags.module';
 import { EventEmitterModule } from '@nestjs/event-emitter';
 import { PaymentsModule } from './payments/payments.module';
+import { DataSourceModule } from './data-source/data-source.module';
+import { UsersModule } from './users/users.module';
+import { ContextIdFactory } from '@nestjs/core';
+import { I18nModule } from './i18n/i18n.module';
+import { AggregateByLocaleStrategy } from './core/aggregate-by-locale.strategy';
+
+ContextIdFactory.apply(new AggregateByLocaleStrategy());
 
 @Module({
   imports: [
@@ -22,6 +29,9 @@ import { PaymentsModule } from './payments/payments.module';
     }),
     TagsModule,
     PaymentsModule,
+    DataSourceModule,
+    UsersModule,
+    I18nModule,
   ],
   controllers: [AppController],
   providers: [AppService],

@@ -1,0 +1,7 @@
+{
+  "hello": "Cześć {firstName}",
+  "world": "Świat",
+  "error": {
+    "notFound": "Zasób {firstName} nie znaleziony"
+  }
+}
